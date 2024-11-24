@@ -1,0 +1,229 @@
+/* Ogólny styl strony */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+}
+
+/* Nagłówek */
+h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl mapy */
+#map {
+    width: 80%;
+    height: 500px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Formularz dodawania miejsca */
+#place-form {
+    width: 80%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Nagłówek formularza */
+#place-form h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Pola wejściowe */
+#place-form input[type="text"],
+#place-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#place-form input[type="text"]:focus,
+#place-form textarea:focus {
+    border-color: #00aaff;
+    outline: none;
+}
+
+/* Przycisk zapisu */
+#save-place {
+    background-color: #00aaff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#save-place:hover {
+    background-color: #008ecc;
+}
+
+/* Styl zdjęcia */
+#place-photo {
+    margin-bottom: 15px;
+}
+
+/* Styl linków i małych elementów */
+#place-form p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Styl tooltipa lub informacji o miejscu */
+.marker-info h3 {
+    color: #00aaff;
+}
+
+.marker-info p {
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#create-group-btnx{
+    margin-bottom: 50px;
+}
+.group-checkbox {
+    accent-color: initial; /* Pozwala użyć dowolnego koloru z JS */
+}
+/* Odstępy między sekcjami */
+form {
+    margin-bottom: 20px;
+}
+
+#group-selection-form {
+    margin-bottom: 30px;
+}
+#place-group{
+    margin-bottom: 10px;
+}
+.user-panel {
+    position: absolute;
+    top: 10px; /* Odległość od góry */
+    right: 10px; /* Odległość od prawej krawędzi */
+    text-align: right; /* Wyrównanie tekstu */
+}
+/* Formularze logowania/rejestracji */
+form.auth-form {
+    width: 80%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+form.auth-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+form.auth-form input[type="text"],
+form.auth-form input[type="email"],
+form.auth-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form.auth-form input:focus {
+    border-color: #00aaff;
+    outline: none;
+}
+
+/* Stylowanie przycisków w formularzach */
+form.auth-form button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form.auth-form button:hover {
+    background-color: #008ecc;
+}
+button {
+    background-color: #00aaff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #008ecc;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    background-color: #006699;
+}
+ul > li {
+    margin-bottom: 20px; 
+}
+
+ul ul > li {
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+}
+
+
+ul ul > li strong {
+    cursor: pointer; 
+    color: #007bff; 
+    transition: color 0.2s ease;
+}
+
+ul ul > li strong:hover {
+    color: #0056b3; 
+    text-decoration: none; 
+}
+.delete-group {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-group:hover {
+    opacity: 0.8; /* Delikatne przyciemnienie */
+}
