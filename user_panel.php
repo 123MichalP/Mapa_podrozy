@@ -140,6 +140,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Obsługa usuwania znaczników po kliknięciu na nazwę
+    const markerElements = document.querySelectorAll(' ul ul > li strong');
+
+    markerElements.forEach(marker => {
+        marker.addEventListener('click', function () {
+            const markerName = this.textContent;
+            const latitude = this.dataset.lat;
+            const longitude = this.dataset.lng;        
+
+            if (confirm(`Czy na pewno chcesz usunąć znacznik "${markerName}" ?`)) {
+                fetch('delete_place.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `latitude=${encodeURIComponent(latitude)}&longitude=${encodeURIComponent(longitude)}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Usuń element grupy z DOM
+                        this.parentElement.remove();
+                        alert('Znacznik została usunięty.');
+                    } else {
+                        alert('Wystąpił błąd podczas usuwania Znacznika.');
+                    }
+                })
+                .catch(() => {
+                    alert('Nie udało się połączyć z serwerem.');
+                });
+            }
+        });
+    });
+});
     </script>
 </body>
 </html>
